@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <!-- Include the header -->
+    
+<!-- Other pages header -->
+<header class="sticky-header">
+
+     <div class="header__donation header__donation--dark">
+        <p>So far we donated €<span class="">20 000</span></p>
+    </div>
+    <nav class="header__nav">
+    <div class="nav__logo"><a href="/index.html">Lokaal 47</a></div>
+    <!-- Hamburger toggle button for mobile menu -->
+         <ul class="nav__links " role="list">
+            <li class="nav__item"><a href="/events" class="nav__link ">Agenda</a></li>
+            <li class="nav__item"><a href="/about" class="nav__link ">Discover Lokaal 47</a></li>
+            <li class="nav__item"><a href="/impact" class="nav__link ">Impact</a></li>
+            <li class="nav__item"><a href="/faq" class="nav__link ">FAQ</a></li>
+            <li class="nav__item"><a href="/contact" class="nav__link nav__current-page">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+            <a href="/nl/contact/index.html" class="nav__language-switch nav__language-switch--dark">nl</a>
+            <button class="button__booking button__primary button__primary--dark">Book Now</button>
+            <button class="nav-toggle nav-toggle-open | nav-toggle--dark" aria-label="open navigation">MENU</button>
+            <button class="nav-toggle nav-toggle-close | nav-toggle--dark" aria-label="close navigation">CLOSE</button>
+        </div>
+    </nav>
+    
+</header>
+
+<script>
+    // Add event listener to the booking button
+    // document.querySelector('.button__booking').addEventListener('click', function() {
+    //     window.location.href = '/booking';
+    // }
+    // );
+    
+    // Add event listeners to the navigation toggle buttons
+    document.querySelector('.nav-toggle-open').addEventListener('click', function() {
+        document.querySelector('.nav__links').classList.add('active');
+        document.querySelector('.nav-toggle-open').style.display = 'none';
+        document.querySelector('.nav-toggle-close').style.display = 'block'; // Show CLOSE
+        document.body.classList.add('body-no-scroll'); // Prevent scrolling
+    });
+
+    document.querySelector('.nav-toggle-close').addEventListener('click', function() {
+        document.querySelector('.nav__links').classList.remove('active');
+        document.querySelector('.nav-toggle-close').style.display = 'none';
+        document.querySelector('.nav-toggle-open').style.display = 'block'; // Show MENU
+        document.body.classList.remove('body-no-scroll'); // Allow scrolling
+    });
+
+
+    // Add event listener to the booking button
+    document.addEventListener('DOMContentLoaded', function() {
+    const bookingButton = document.querySelector('.button__booking');
+
+    bookingButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default button action
+
+        // Check the screen width and redirect accordingly
+        if (window.innerWidth <= 768) {
+            window.location.href = '/booking-step-1';
+        } else {
+            window.location.href = '/booking';
+        }
+    });
+});
+
+
+function adjustNavDisplay() {
+    const navToggleOpen = document.querySelector('.nav-toggle-open');
+    const navToggleClose = document.querySelector('.nav-toggle-close');
+
+    // Check if the screen width is more than 768 pixels
+    if (window.innerWidth > 768) {
+        // For desktop: Ensure that the "MENU" button is hidden and "CLOSE" button is not displayed
+        navToggleOpen.style.display = 'none';
+        navToggleClose.style.display = 'none';
+        document.querySelector('.nav__links').classList.remove('active'); // Also ensure that the nav links are not displayed in active state
+        document.body.classList.remove('body-no-scroll'); // Allow scrolling
+    } else {
+        // For mobile: Ensure that the correct toggle button is displayed
+        if (document.querySelector('.nav__links').classList.contains('active')) {
+            navToggleOpen.style.display = 'none';
+            navToggleClose.style.display = 'block';
+        } else {
+            navToggleOpen.style.display = 'block';
+            navToggleClose.style.display = 'none';
+        }
+    }
+}
+
+// Add event listeners for both DOMContentLoaded and resize events
+document.addEventListener('DOMContentLoaded', adjustNavDisplay); // Initial adjustment when document is ready
+window.addEventListener('resize', adjustNavDisplay); // Adjust every time the window is resized
+
+
+
+</script>
+    
+    <main class="contact">
+        <div class="contact__image-container">
+            <img src="/Photos/contact-photo.webp" alt="" class="contact__image">
+        </div>
+        <section class="contact__section contact__area">
+            <h1 class="contact__title">Questions? Curiosities?</h1>
+            <div class="contact__info">
+                <div class="contact__info-item contact__info-item--phone">
+                    <h4 class="contact__info-heading">Phone</h4>
+                    <p class="contact__info-text">0612345678</p>
+                </div>
+                <div class="contact__info-item contact__info-item--email">
+                    <h4 class="contact__info-heading">Email</h4>
+                    <p class="contact__info-text">hello@lokaal47.nl</p>
+                </div>
+                <div class="contact__info-item contact__info-item--hours">
+                    <h4 class="contact__info-heading">We are open</h4>
+                    <p class="contact__info-text | time">Mon-Fri: 9AM — 8PM</p>
+                </div>
+                <div class="contact__info-item contact__info-item--address">
+                    <h4 class="contact__info-heading">Address</h4>
+                    <p class="contact__info-text">Olaf Palmestraat 1 <br> 2616LN Delft</p>
+                </div>
+            </div>
+            <form action="" class="contact__form">
+                <input type="text" name="name" id="name" placeholder="Name*" required class="contact__input">
+                <input type="email" name="email" id="email" placeholder="Email*" required class="contact__input">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" class="contact__textarea"></textarea>
+                <input type="button" value="Submit" class="contact__input--submit button__primary button__primary--dark">
+            </form>
+        </section>
+    </main>
+    
+    <!-- Include the footer -->
+    <footer>
+        <div class="footer__logo-wrapper">
+            <p class="footer__logo">Lokaal 47</p>
+        </div>
+        <div class="footer__flex-wrapper">
+            <div class="footer__flex-container footer__flex-container--top">
+                <nav class="footer__nav">
+                    <h4 class="footer__title">Info</h4>
+                    <ul class="footer__list" role="list">
+                        <li class="footer__item"><a href="/events" class="footer__link">Agenda</a></li>
+                        <li class="footer__item"><a href="/about" class="footer__link">Discover Lokaal 47</a></li>
+                        <li class="footer__item"><a href="/impact" class="footer__link">Impact</a></li>
+                        <li class="footer__item"><a href="/faq" class="footer__link">FAQ</a></li>
+                        <li class="footer__item"><a href="/contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__contact">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact-info">
+                        <p class="footer__address">Olaf Palmestraat 1 <br>2616LN Delft</p>
+                        <a href="mailto:">info@lokaal47.nl</a>
+                        <a href="tel:+">316 123 456</a>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <a href="" class="footer__social-link">
+                        <img src="/Photos/instagram-icon.png" alt="Instagram icon" class="footer__social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__flex-container footer__flex-container--bottom">
+                <p class="footer__copyright">© 2021 Lokaal 47</p>
+                <div class="footer__legal">
+                    <a href="/privacy-policy" class="footer__link footer__link--legal">Privacy Policy</a>
+                    <a href="/cookies-policy" class="footer__link footer__link--legal">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+</head>
+<body>
+    <!-- Include the header -->
+    
+<!-- Other pages header -->
+<header class="sticky-header">
+
+     <div class="header__donation header__donation--dark">
+        <p>So far we donated €<span class="">20 000</span></p>
+    </div>
+    <nav class="header__nav">
+    <div class="nav__logo"><a href="/index.html">Lokaal 47</a></div>
+    <!-- Hamburger toggle button for mobile menu -->
+         <ul class="nav__links " role="list">
+            <li class="nav__item"><a href="/events" class="nav__link ">Agenda</a></li>
+            <li class="nav__item"><a href="/about" class="nav__link ">Discover Lokaal 47</a></li>
+            <li class="nav__item"><a href="/impact" class="nav__link ">Impact</a></li>
+            <li class="nav__item"><a href="/faq" class="nav__link nav__current-page">FAQ</a></li>
+            <li class="nav__item"><a href="/contact" class="nav__link ">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+            <a href="/nl/faq/index.html" class="nav__language-switch nav__language-switch--dark">nl</a>
+            <button class="button__booking button__primary button__primary--dark">Book Now</button>
+            <button class="nav-toggle nav-toggle-open | nav-toggle--dark" aria-label="open navigation">MENU</button>
+            <button class="nav-toggle nav-toggle-close | nav-toggle--dark" aria-label="close navigation">CLOSE</button>
+        </div>
+    </nav>
+    
+</header>
+
+<script>
+    // Add event listener to the booking button
+    // document.querySelector('.button__booking').addEventListener('click', function() {
+    //     window.location.href = '/booking';
+    // }
+    // );
+    
+    // Add event listeners to the navigation toggle buttons
+    document.querySelector('.nav-toggle-open').addEventListener('click', function() {
+        document.querySelector('.nav__links').classList.add('active');
+        document.querySelector('.nav-toggle-open').style.display = 'none';
+        document.querySelector('.nav-toggle-close').style.display = 'block'; // Show CLOSE
+        document.body.classList.add('body-no-scroll'); // Prevent scrolling
+    });
+
+    document.querySelector('.nav-toggle-close').addEventListener('click', function() {
+        document.querySelector('.nav__links').classList.remove('active');
+        document.querySelector('.nav-toggle-close').style.display = 'none';
+        document.querySelector('.nav-toggle-open').style.display = 'block'; // Show MENU
+        document.body.classList.remove('body-no-scroll'); // Allow scrolling
+    });
+
+
+    // Add event listener to the booking button
+    document.addEventListener('DOMContentLoaded', function() {
+    const bookingButton = document.querySelector('.button__booking');
+
+    bookingButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default button action
+
+        // Check the screen width and redirect accordingly
+        if (window.innerWidth <= 768) {
+            window.location.href = '/booking-step-1';
+        } else {
+            window.location.href = '/booking';
+        }
+    });
+});
+
+
+function adjustNavDisplay() {
+    const navToggleOpen = document.querySelector('.nav-toggle-open');
+    const navToggleClose = document.querySelector('.nav-toggle-close');
+
+    // Check if the screen width is more than 768 pixels
+    if (window.innerWidth > 768) {
+        // For desktop: Ensure that the "MENU" button is hidden and "CLOSE" button is not displayed
+        navToggleOpen.style.display = 'none';
+        navToggleClose.style.display = 'none';
+        document.querySelector('.nav__links').classList.remove('active'); // Also ensure that the nav links are not displayed in active state
+        document.body.classList.remove('body-no-scroll'); // Allow scrolling
+    } else {
+        // For mobile: Ensure that the correct toggle button is displayed
+        if (document.querySelector('.nav__links').classList.contains('active')) {
+            navToggleOpen.style.display = 'none';
+            navToggleClose.style.display = 'block';
+        } else {
+            navToggleOpen.style.display = 'block';
+            navToggleClose.style.display = 'none';
+        }
+    }
+}
+
+// Add event listeners for both DOMContentLoaded and resize events
+document.addEventListener('DOMContentLoaded', adjustNavDisplay); // Initial adjustment when document is ready
+window.addEventListener('resize', adjustNavDisplay); // Adjust every time the window is resized
+
+
+
+</script>
+    
+    <main class="main__faq faq ">
+        <div class="faq__header-wrapper">
+            <h1 class="faq__title">You might be wondering</h1>
+            <p class="faq__description">
+                For any questions, concerns or assistance, please email us at 
+                <a href="mailto:">hello@lokaal47.nl</a>
+            </p>
+        </div>
+        <div class="faq__items-wrapper">
+            <section class="faq__item | toggle">
+                <div class="faq__question-wrapper | toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">What types of events can I host?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div>
+                </div>
+                <p class="faq__answer | toggle-inner">
+                    Text to be added
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">What’s your maximum capacity?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div> 
+                </div>
+                <p class="faq__answer toggle-inner">
+                    Our setting perfectly accommodates up to 14 guests.
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">Can the place accommodate accessibility needs?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div>
+                </div>
+                <p class="faq__answer toggle-inner">
+                    While we strive to welcome everyone, our current space constraints mean we cannot offer an accessible restroom at this time. We&#39;re actively seeking ways to enhance accessibility and appreciate your understanding.
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">How much does it cost to rent the place and what does the fee cover?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div>  
+                </div>
+                <p class="faq__answer toggle-inner">
+                    Text to be added
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">Do you require a deposit?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div> 
+                </div>
+                <p class="faq__answer toggle-inner">
+                    Text to be added
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">Can I get an invoice?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div>  
+                </div>
+                <p class="faq__answer toggle-inner">
+                    Text to be added
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">What is your cancellation policy, and are there any associates fees?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div>  
+                </div>
+                <p class="faq__answer toggle-inner">
+                    Text to be added
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">Is there parking?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div>  
+                </div>
+                <p class="faq__answer toggle-inner">
+                    In line with our commitment to sustainability, we encourage biking or public transport. For those driving, carpooling is appreciated. We offer 2 complimentary on-site parking spaces (also for loading and unloading). Nearby, 10 paid parking spots are available within a 5-minute walk, at a rate of €7.50 excluding VAT per car.
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">What technology can offer in-house (screen, sound, projection)?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div> 
+                </div>
+                <p class="faq__answer toggle-inner">
+                    Our venue is equipped with high-speed Wi-Fi and state-of-the-art interactive screens, perfect for both engaging presentations and seamless business calls.
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">How flexible is the space configuration for different event layouts?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div> 
+                </div>
+                <p class="faq__answer toggle-inner">
+                    Our space easily adapts to a variety of configurations to match your event&#39;s unique needs. Please share your preferences via email when booking, so we can tailor the setup just for you.
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">What guidelines are in place for guests at the venue?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div> 
+                </div>
+                <p class="faq__answer toggle-inner">
+                    To ensure a smooth and enjoyable experience for all our guests, we adhere to a specific set of guidelines outlined in our <a href="">House Rules</a>. 
+                    Additionally, we comply with the AVG Privacy Law and the Uniforme Horeca Voorwaarden to maintain the highest standards of service and privacy.
+                </p>
+            </section>
+            <section class="faq__item toggle">
+                <div class="faq__question-wrapper toggle-title" role="button" tabindex="0" aria-expanded="false">
+                    <h4 class="faq__question">Are there any outdoor facilities available for use?</h4>
+                    <div class="arrow-container">
+                        <svg class="arrow-down" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                        </svg>
+                        <svg class="arrow-up" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M9 0L17.6603 15H0.339746L9 0Z" fill="#252525"/>
+                        </svg>
+                      </div> 
+                </div>
+                <p class="faq__answer toggle-inner">
+                    Yes, we have a small covered outdoor area for breaks and a garden for enjoying lunch in good weather.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Include the footer -->
+    <footer>
+        <div class="footer__logo-wrapper">
+            <p class="footer__logo">Lokaal 47</p>
+        </div>
+        <div class="footer__flex-wrapper">
+            <div class="footer__flex-container footer__flex-container--top">
+                <nav class="footer__nav">
+                    <h4 class="footer__title">Info</h4>
+                    <ul class="footer__list" role="list">
+                        <li class="footer__item"><a href="/events" class="footer__link">Agenda</a></li>
+                        <li class="footer__item"><a href="/about" class="footer__link">Discover Lokaal 47</a></li>
+                        <li class="footer__item"><a href="/impact" class="footer__link">Impact</a></li>
+                        <li class="footer__item"><a href="/faq" class="footer__link">FAQ</a></li>
+                        <li class="footer__item"><a href="/contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__contact">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact-info">
+                        <p class="footer__address">Olaf Palmestraat 1 <br>2616LN Delft</p>
+                        <a href="mailto:">info@lokaal47.nl</a>
+                        <a href="tel:+">316 123 456</a>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <a href="" class="footer__social-link">
+                        <img src="/Photos/instagram-icon.png" alt="Instagram icon" class="footer__social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__flex-container footer__flex-container--bottom">
+                <p class="footer__copyright">© 2021 Lokaal 47</p>
+                <div class="footer__legal">
+                    <a href="/privacy-policy" class="footer__link footer__link--legal">Privacy Policy</a>
+                    <a href="/cookies-policy" class="footer__link footer__link--legal">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        jQuery(document).ready(function($) {
+            $(".toggle .toggle-title").click(function() {
+                var $this = $(this);
+                $this.toggleClass("active");
+                var isActive = $this.hasClass('active');
+                
+                $this.closest('.toggle').find('.toggle-inner').slideToggle(200);
+                $this.find('.arrow-down').css('display', isActive ? 'none' : 'block');
+                $this.find('.arrow-up').css('display', isActive ? 'block' : 'none');
+            });
+        });
+
+    </script>
+</body>
+</html>

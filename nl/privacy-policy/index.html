@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Include the header -->
+   
+<!-- Other pages header -->
+<header class="sticky-header">
+
+     <div class="header__donation header__donation--dark">
+        <p>So far we donated €<span class="">20 000</span></p>
+    </div>
+    <nav class="header__nav">
+    <div class="nav__logo"><a href="/nl/index.html">Lokaal 47</a></div>
+    <!-- Hamburger toggle button for mobile menu -->
+         <ul class="nav__links " role="list">
+            <li class="nav__item"><a href="/nl/events" class="nav__link ">Het Agenda</a></li>
+            <li class="nav__item"><a href="/nl/about" class="nav__link "></a></li>
+            <li class="nav__item"><a href="/nl/impact" class="nav__link "></a></li>
+            <li class="nav__item"><a href="/nl/faq" class="nav__link ">FAQ</a></li>
+            <li class="nav__item"><a href="/nl/contact" class="nav__link "></a></li>
+        </ul>
+        <div class="nav__actions">
+            <a href="/en/privacy-policy/index.html" class="nav__language-switch nav__language-switch--dark">en</a>
+            <button class="button__booking button__primary button__primary--dark"></button>
+            <button class="nav-toggle nav-toggle-open | nav-toggle--dark" aria-label="open navigation">MENU</button>
+            <button class="nav-toggle nav-toggle-close | nav-toggle--dark" aria-label="close navigation">CLOSE</button>
+        </div>
+    </nav>
+    
+</header>
+
+<script>
+    // Add event listener to the booking button
+    // document.querySelector('.button__booking').addEventListener('click', function() {
+    //     window.location.href = '/nl/booking';
+    // }
+    // );
+    
+    // Add event listeners to the navigation toggle buttons
+    document.querySelector('.nav-toggle-open').addEventListener('click', function() {
+        document.querySelector('.nav__links').classList.add('active');
+        document.querySelector('.nav-toggle-open').style.display = 'none';
+        document.querySelector('.nav-toggle-close').style.display = 'block'; // Show CLOSE
+        document.body.classList.add('body-no-scroll'); // Prevent scrolling
+    });
+
+    document.querySelector('.nav-toggle-close').addEventListener('click', function() {
+        document.querySelector('.nav__links').classList.remove('active');
+        document.querySelector('.nav-toggle-close').style.display = 'none';
+        document.querySelector('.nav-toggle-open').style.display = 'block'; // Show MENU
+        document.body.classList.remove('body-no-scroll'); // Allow scrolling
+    });
+
+
+    // Add event listener to the booking button
+    document.addEventListener('DOMContentLoaded', function() {
+    const bookingButton = document.querySelector('.button__booking');
+
+    bookingButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default button action
+
+        // Check the screen width and redirect accordingly
+        if (window.innerWidth <= 768) {
+            window.location.href = '/nl/booking-step-1';
+        } else {
+            window.location.href = '/nl/booking';
+        }
+    });
+});
+
+
+function adjustNavDisplay() {
+    const navToggleOpen = document.querySelector('.nav-toggle-open');
+    const navToggleClose = document.querySelector('.nav-toggle-close');
+
+    // Check if the screen width is more than 768 pixels
+    if (window.innerWidth > 768) {
+        // For desktop: Ensure that the "MENU" button is hidden and "CLOSE" button is not displayed
+        navToggleOpen.style.display = 'none';
+        navToggleClose.style.display = 'none';
+        document.querySelector('.nav__links').classList.remove('active'); // Also ensure that the nav links are not displayed in active state
+        document.body.classList.remove('body-no-scroll'); // Allow scrolling
+    } else {
+        // For mobile: Ensure that the correct toggle button is displayed
+        if (document.querySelector('.nav__links').classList.contains('active')) {
+            navToggleOpen.style.display = 'none';
+            navToggleClose.style.display = 'block';
+        } else {
+            navToggleOpen.style.display = 'block';
+            navToggleClose.style.display = 'none';
+        }
+    }
+}
+
+// Add event listeners for both DOMContentLoaded and resize events
+document.addEventListener('DOMContentLoaded', adjustNavDisplay); // Initial adjustment when document is ready
+window.addEventListener('resize', adjustNavDisplay); // Adjust every time the window is resized
+
+
+
+</script>
+
+   <main class="privacy-policy">
+    <hgroup class="privacy-policy__intro">
+        <h1 class="privacy-policy__heading">Lokaal 47 Privacy Policy</h1>
+        <p class="privacy-policy__text">This is the cookie policy for Lokaal 47, accessible from <a href="">lokaal47.com</a></p>
+    </hgroup>
+   </main>
+
+   <!-- Include the footer -->
+   <footer>
+        <div class="footer__logo-wrapper">
+            <p class="footer__logo">Lokaal 47</p>
+        </div>
+        <div class="footer__flex-wrapper">
+            <div class="footer__flex-container footer__flex-container--top">
+                <nav class="footer__nav">
+                    <h4 class="footer__title"></h4>
+                    <ul class="footer__list" role="list">
+                        <li class="footer__item"><a href="/nl/events" class="footer__link">Het Agenda</a></li>
+                        <li class="footer__item"><a href="/nl/about" class="footer__link"></a></li>
+                        <li class="footer__item"><a href="/nl/impact" class="footer__link"></a></li>
+                        <li class="footer__item"><a href="/nl/faq" class="footer__link">FAQ</a></li>
+                        <li class="footer__item"><a href="/nl/contact" class="footer__link"></a></li>
+                    </ul>
+                </nav>
+                <div class="footer__contact">
+                    <h4 class="footer__title"></h4>
+                    <div class="footer__contact-info">
+                        <p class="footer__address">Olaf Palmestraat 1 <br>2616LN Delft</p>
+                        <a href="mailto:">info@lokaal47.nl</a>
+                        <a href="tel:+">316 123 456</a>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <a href="" class="footer__social-link">
+                        <img src="/Photos/instagram-icon.png" alt="Instagram icon" class="footer__social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__flex-container footer__flex-container--bottom">
+                <p class="footer__copyright">© 2021 Lokaal 47</p>
+                <div class="footer__legal">
+                    <a href="/nl/privacy-policy" class="footer__link footer__link--legal"></a>
+                    <a href="/nl/cookies-policy" class="footer__link footer__link--legal"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

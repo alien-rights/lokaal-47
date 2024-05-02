@@ -1,0 +1,575 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokaal 47</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+</head>
+<body>
+
+    
+    
+<!-- Home page header -->
+<header class="home__header">
+    <div class="sticky-header">
+
+
+     <div class="header__donation header__donation--light">
+        <p>So far we donated €<span class="">20 000</span></p>
+    </div>
+    <nav class="header__nav">
+    <div class="nav__logo"><a href="#">Lokaal 47</a></div>
+    <!-- Hamburger toggle button for mobile menu -->
+         <ul class="nav__links " role="list">
+            <li class="nav__item"><a href="/en/events" class="nav__link ">Agenda</a></li>
+            <li class="nav__item"><a href="/en/about" class="nav__link ">Discover Lokaal 47</a></li>
+            <li class="nav__item"><a href="/en/impact" class="nav__link ">Impact</a></li>
+            <li class="nav__item"><a href="/en/faq" class="nav__link ">FAQ</a></li>
+            <li class="nav__item"><a href="/en/contact" class="nav__link ">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+            <a href="/nl/index.html" class="nav__language-switch nav__language-switch--dark">nl</a>
+            <button class="button__booking button__primary button__primary--light">Book Now</button>
+            <button class="nav-toggle nav-toggle-open | nav-toggle--light" aria-label="open navigation">MENU</button>
+            <button class="nav-toggle nav-toggle-close | nav-toggle--dark" aria-label="close navigation">CLOSE</button>
+        </div>
+    </nav>
+    
+    </div>
+        <div class="header__title-container">
+            <h1 class="header__title">Lokaal 47</h1>
+            <h2 class="header__subtitle">A hub designed to connect</h2>
+        </div>
+    
+</header>
+
+<script>
+    // Add event listener to the booking button
+    // document.querySelector('.button__booking').addEventListener('click', function() {
+    //     window.location.href = '/en/booking';
+    // }
+    // );
+    
+    // Add event listeners to the navigation toggle buttons
+    document.querySelector('.nav-toggle-open').addEventListener('click', function() {
+        document.querySelector('.nav__links').classList.add('active');
+        document.querySelector('.nav-toggle-open').style.display = 'none';
+        document.querySelector('.nav-toggle-close').style.display = 'block'; // Show CLOSE
+        document.body.classList.add('body-no-scroll'); // Prevent scrolling
+    });
+
+    document.querySelector('.nav-toggle-close').addEventListener('click', function() {
+        document.querySelector('.nav__links').classList.remove('active');
+        document.querySelector('.nav-toggle-close').style.display = 'none';
+        document.querySelector('.nav-toggle-open').style.display = 'block'; // Show MENU
+        document.body.classList.remove('body-no-scroll'); // Allow scrolling
+    });
+
+
+    // Add event listener to the booking button
+    document.addEventListener('DOMContentLoaded', function() {
+    const bookingButton = document.querySelector('.button__booking');
+
+    bookingButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default button action
+
+        // Check the screen width and redirect accordingly
+        if (window.innerWidth <= 768) {
+            window.location.href = '/en/booking-step-1';
+        } else {
+            window.location.href = '/en/booking';
+        }
+    });
+});
+
+
+function adjustNavDisplay() {
+    const navToggleOpen = document.querySelector('.nav-toggle-open');
+    const navToggleClose = document.querySelector('.nav-toggle-close');
+
+    // Check if the screen width is more than 768 pixels
+    if (window.innerWidth > 768) {
+        // For desktop: Ensure that the "MENU" button is hidden and "CLOSE" button is not displayed
+        navToggleOpen.style.display = 'none';
+        navToggleClose.style.display = 'none';
+        document.querySelector('.nav__links').classList.remove('active'); // Also ensure that the nav links are not displayed in active state
+        document.body.classList.remove('body-no-scroll'); // Allow scrolling
+    } else {
+        // For mobile: Ensure that the correct toggle button is displayed
+        if (document.querySelector('.nav__links').classList.contains('active')) {
+            navToggleOpen.style.display = 'none';
+            navToggleClose.style.display = 'block';
+        } else {
+            navToggleOpen.style.display = 'block';
+            navToggleClose.style.display = 'none';
+        }
+    }
+}
+
+// Add event listeners for both DOMContentLoaded and resize events
+document.addEventListener('DOMContentLoaded', adjustNavDisplay); // Initial adjustment when document is ready
+window.addEventListener('resize', adjustNavDisplay); // Adjust every time the window is resized
+
+
+
+</script>
+
+    <main class="home__main">
+        <section class="home-about">
+            <div class="home-about__image-wrapper">
+                <img src="/Photos/discover-photo.png" alt="" class="home-about__image">
+            </div>
+            <div class="home-about__text-content">
+                <h2 class="home-about__title home__title">Discover Lokaal 47</h2>
+                <p class="home-about__intro">A space where creativity and collaboration flow as freely as the coffee. Lokaal 47 is that rare find: a hub designed for teams to connect, learn, and unwind. Here, every corner is crafted to inspire and facilitate conversations that matter. By embracing a sustainable future driven by strong local engagement, we ensure every aspect of our space reflects this deep-seated belief.</p>
+                <ul class="home-about__list" role="list">
+                    <li class="home-about__list-item">Meet and Greet</li>
+                    <li class="home-about__list-item">Customised Activities</li>
+                    <li class="home-about__list-item">Agenda</li>
+                </ul>
+                <button class="home-about__button button__secondary">About Us</button>
+            </div>
+        </section>
+        <section class="building-plan">
+            <img src="/Photos/building-plan.png" alt="" class="building-plan__image">
+        </section>
+        <section class="facilities">
+            <div class="facilities__intro">
+                <h2 class="facilities__title home__title">Facilities</h2>
+                <!-- <p class="facilities__description">
+                    Within the walls of Lokaal 47, every element is in place to fuel your creativity, foster your connections, and facilitate your every endeavor. 
+                    Whether it's the tools you need to bring your ideas to life or the space that makes your day more seamless and efficient, we've ensured that every need is not just met, but anticipated.
+                </p> -->
+            </div>
+            <div class="facilities__container">
+                <div class="facility">
+                    <img src="/Photos/icon-wifi.svg" alt="" class="facility__image">
+                    <div class="facility__details">
+                        <h5 class="facility__title">Wi-Fi</h5>
+                        <p class="facility__description">Seamless connectivity at your fingertips. Our high-speed Wi-Fi ensures you stay connected with the world.</p>
+                    </div>
+                </div>
+                <div class="facility">
+                    <img src="/Photos/icon-touch-screen.svg" alt="" class="facility__image">
+                    <div class="facility__details">
+                        <h5 class="facility__title">Interactive Screen</h5>
+                        <p class="facility__description">Engage and inspire with our state-of-the-art interactive screens, perfect for presentations, brainstorming sessions, or bringing your ideas to life. With added functionality for business calls, they&#39;re your all-in-one solution for connectivity and creativity.</p>
+                    </div>
+                </div>
+                <div class="facility">
+                    <img src="/Photos/icon-food.svg" alt="" class="facility__image">
+                    <div class="facility__details">
+                        <h5 class="facility__title">Food and Beverages</h5>
+                        <p class="facility__description">Delight in high-quality coffee, tea, and fresh fruit, offered all day. Locally-sourced ingredients meet skilled culinary hands in our kitchen, ensuring meals are thoughtfully prepared for all dietary preferences.</p>
+                    </div>
+                </div>
+                <div class="facility">
+                    <img src="/Photos/icon-car.svg" alt="" class="facility__image">
+                    <div class="facility__details">
+                        <h5 class="facility__title">Parking</h5>
+                        <p class="facility__description">Convenient parking is available (limited to 10 cars), but we encourage cycling for a greener, quieter experience. Embrace sustainability and enjoy the added benefit of reducing your ecological footprint.</p>
+                    </div>
+                </div>
+                <div class="facility">
+                    <img src="/Photos/icon-atmosphere.svg" alt="" class="facility__image">
+                    <div class="facility__details">
+                        <h5 class="facility__title">Atmosphere</h5>
+                        <p class="facility__description">In Lokaal 47, every corner is crafted to inspire and liberate your mind. A sanctuary for creativity and tranquility, it&#39;s the perfect backdrop to spark your imagination and find peace.</p>
+                    </div>
+                </div>
+                <div class="facility">
+                    <img src="/Photos/icon-essentials.svg" alt="" class="facility__image">
+                    <div class="facility__details">
+                        <h5 class="facility__title">Essentials</h5>
+                        <p class="facility__description">Equipped with pens, paper, flipcharts, markers, and post-its—plus our signature smiles. We’ve got you covered.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="highlights highlights__nature">
+            <div class="highlights__pages">
+                <p class="highlights__page-indicator"><span class="highlights__current-page">01</span> / <span class="highlights__total-pages">04</span></p>
+            </div>
+            <div class="highlights__navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" class="highlights__arrow highlights__arrow--left  |  arrow-pagination">
+                    <circle cx="24" cy="24" r="23.2" stroke="#ECEAE0" stroke-width="1.2"/>
+                    <path d="M23.8277 14.6641L14.6641 23.8277M14.6641 23.8277L23.8277 33.3307M14.6641 23.8277H32.3125" stroke="#ECEAE0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" class="highlights__arrow highlights__arrow--right  |  arrow-pagination">
+                    <circle cx="24" cy="24" r="23.2" transform="rotate(-180 24 24)" stroke="#ECEAE0" stroke-width="1.2"/>
+                    <path d="M24.1723 33.3359L33.3359 24.1723M33.3359 24.1723L24.1723 14.6693M33.3359 24.1723H15.6875" stroke="#ECEAE0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+            </div>
+            <div class="highlights__feature highlights__feature--1 highlights__feature--active">
+                <h5 class="highlights__feature-title">Surrounded by Nature</h5>
+                <p class="highlights__feature-description">Delftsehout&#39;s beauty is just a five-minute walk away, making us a must-book for those who cherish nature.</p>
+            </div>
+            <div class="highlights__feature highlights__feature--2  |  ">
+                <h5 class="highlights__feature-title">Vitality in Every Bite</h5>
+                <p class="highlights__feature-description">Savor the energy in every bite. Our power foods, crafted from local products, are designed to fuel your day and nourish your spirit.</p>
+            </div>
+            <div class="highlights__feature highlights__feature--3  |  ">
+                <h5 class="highlights__feature-title">Meet and Greet</h5>
+                <p class="highlights__feature-description">Rediscover the joy of meetings with us. Experience meetings that are not only effective but also a source of team enjoyment and new discoveries.</p>
+            </div>
+            <div class="highlights__feature highlights__feature--4">
+                <h5 class="highlights__feature-title">Activities and Experiences</h5>
+                <p class="highlights__feature-description">From productive meetings and dynamic team-building exercises to wine tastings, creative photoshoots, and nature walks. Each experience is tailor-made to enrich your visit.</p>
+            </div>
+        </section>
+        <section class="testimonials">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" class="testimonials__arrow testimonials__arrow--left  |  arrow-pagination">
+                    <circle cx="24" cy="24" r="23.2" stroke="#252525" stroke-width="1.2"/>
+                    <path d="M23.8277 14.6641L14.6641 23.8277M14.6641 23.8277L23.8277 33.3307M14.6641 23.8277H32.3125" stroke="#252525" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+            <div class="testimonials__text-wrapper">
+                <h2 class="testimonials__title">In your words</h2>
+                <div class="testimonial">
+                    <p class="testimonial__text"></p>
+                    <p class="testimonial__author"></p>
+                </div>
+                <p class="testimonials__page-indicator"><span class="testimonials__current"></span> / <span class="testimonials__total">5</span></p>
+            </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" class="testimonials__arrow testimonials__arrow--right  |  arrow-pagination">
+                    <circle cx="24" cy="24" r="23.2" transform="rotate(-180 24 24)" stroke="#252525" stroke-width="1.2"/>
+                    <path d="M24.1723 33.3359L33.3359 24.1723M33.3359 24.1723L24.1723 14.6693M33.3359 24.1723L15.6875 24.1723" stroke="#252525" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+        </section>
+        <section class="building-photo">
+            <img src="/Photos/building-photo.png" alt="" class="building-photo__image">
+        </section>
+        <section class="partners">
+            <div class="partners__text-content">
+                <h2 class="partners__title home__title">We work with the best</h2>
+                <p class="partners__intro">We work with a team of talented partners, brands, and professionals who pour all their knowledge into everything we build. Committed to sustainability, we prioritize partnering with local businesses to keep our environmental footprint as small as possible, while still ensuring we collaborate with only the finest suppliers.</p>
+                <button class="partners__button button__secondary">Partners</button>
+            </div>
+            <div class="partners__logos">
+                <div class="partner-logo | partner-logo-top"><img src="/Photos/Partners/logo-meneer.svg" alt="Logo, Meneer Leffers" class="partner-logo__image"></div>
+                <div class="partner-logo | partner-logo-top"><img src="/Photos/Partners/logo-sup.svg" alt="Logo, Sup Delft" class="partner-logo__image"></div>
+                <div class="partner-logo"><img src="/Photos/Partners/logo-newton.svg" alt="Logo, Newton Energy Solutions" class="partner-logo__image"></div>
+                <div class="partner-logo"><img src="/Photos/Partners/logo-cafe.svg" alt="Logo, Cafe du Midi" class="partner-logo__image"></div>
+                <div class="partner-logo"><img src="/Photos/Partners/logo-hoeve.svg" alt="Logo, Hoeve Biesland" class="partner-logo__image"></div>
+                <div class="partner-logo"><img src="/Photos/Partners/logo-dnvg1.svg" alt="Logo, De Nootzaak van Genieten" class="partner-logo__image"></div>
+            </div>
+        </section>
+    </main>
+    <!-- Include the footer -->
+    <footer>
+        <div class="footer__logo-wrapper">
+            <p class="footer__logo">Lokaal 47</p>
+        </div>
+        <div class="footer__flex-wrapper">
+            <div class="footer__flex-container footer__flex-container--top">
+                <nav class="footer__nav">
+                    <h4 class="footer__title">Info</h4>
+                    <ul class="footer__list" role="list">
+                        <li class="footer__item"><a href="/en/events" class="footer__link">Agenda</a></li>
+                        <li class="footer__item"><a href="/en/about" class="footer__link">Discover Lokaal 47</a></li>
+                        <li class="footer__item"><a href="/en/impact" class="footer__link">Impact</a></li>
+                        <li class="footer__item"><a href="/en/faq" class="footer__link">FAQ</a></li>
+                        <li class="footer__item"><a href="/en/contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__contact">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact-info">
+                        <p class="footer__address">Olaf Palmestraat 1 <br>2616LN Delft</p>
+                        <a href="mailto:">info@lokaal47.nl</a>
+                        <a href="tel:+">316 123 456</a>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <a href="" class="footer__social-link">
+                        <img src="/Photos/instagram-icon.png" alt="Instagram icon" class="footer__social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__flex-container footer__flex-container--bottom">
+                <p class="footer__copyright">© 2021 Lokaal 47</p>
+                <div class="footer__legal">
+                    <a href="/en/privacy-policy" class="footer__link footer__link--legal">Privacy Policy</a>
+                    <a href="/en/cookies-policy" class="footer__link footer__link--legal">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- COOKIES POP-UP -->
+    <dialog class="dialog" id="cookies-container">
+        <div class="cookies-wrapper">
+            <h2 class="dialog__title">Cookies & Privacy Settings</h2>
+            <p>
+                To offer you a better experience, this site uses cookies. By selecting “Accept”, 
+                you agree to their use. To decline, please click “Reject”.
+            </p>
+            <div class="cookies-consent__buttons">
+                <button class="button__primary button__primary--dark button-cookies--accept" id="acceptButton">Accept</button>
+                <button class="button__secondary cookies-consent__NOK" id="rejectButton">Reject</button>
+            </div>
+            <div class="cookies-consent__links">
+                <a href="/en/privacy-policy" class="">Privacy Policy</a>
+                <a href="/en/cookies-policy" class="">Cookies Policy</a>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- <script src="/Scripts/general-scripts.js"></script> -->
+    <script>
+        // COOKIES
+        const dialog = document.querySelector('.dialog');
+        const acceptButton = document.getElementById('acceptButton');
+        const rejectButton = document.getElementById('rejectButton');
+
+        function setConsentCookie(value) {
+            const date = new Date();
+            date.setMonth(date.getMonth() + 1); // Set the cookie to expire in one month
+            document.cookie = `cookiesAccepted=${value};expires=${date.toUTCString()};path=/;Secure`;
+        }
+
+
+        acceptButton.addEventListener('click', function() {
+            console.log('Accept clicked');
+            setConsentCookie('true');
+            dialog.close();
+            console.log('Dialog closed, cookies accepted');
+        });
+
+        rejectButton.addEventListener('click', function() {
+            console.log('Reject clicked');
+            setConsentCookie('false');
+            dialog.close();
+            console.log('Dialog closed, cookies rejected');
+        });
+
+        window.addEventListener('load', function() {
+            console.log('Window loaded');
+            setTimeout(function() {
+                // Check if the cookiesAccepted cookie exists
+                const cookiesAccepted = document.cookie.split(';').find(item => item.trim().startsWith('cookiesAccepted='));
+                if (!cookiesAccepted) {
+                    // Only show the dialog if no decision has been recorded
+                    dialog.showModal();
+                    console.log('Dialog should be open now');
+                }
+            }, 2000);
+        });
+
+
+
+    // SCROLL
+       $(document).ready(function() {
+            // This function checks the scroll position of the page
+        function checkScroll() {
+            let scrollPos = $(window).scrollTop(); // Current vertical scroll position
+            let triggerHeight = $(window).height() * 0.9; // 90% of the viewport height
+
+            // If we've scrolled more than 90% of the viewport height
+            if(scrollPos > triggerHeight) {
+                // Change to dark theme classes
+                $('.header__donation').removeClass('header__donation--light').addClass('header__donation--dark');
+                $('.button__primary').removeClass('button__primary--light').addClass('button__primary--dark');
+
+                // Add background color to nav and change link colors
+                $('.header__nav').css('background-color', '#EEDFB2'); // Example: black background
+                $('.nav__link, .nav__logo a').css('color', '#252525'); // Change link and logo colors to #252525
+                $('.nav__language-switch').css('color', '#252525'); // Ensure the Language button color is changed
+                $('.nav-toggle').css('color', '#252525'); // Ensure the logo color is changed
+
+                // Ensure the logo color is changed
+                $('.nav__logo a').css('color', '#252525');
+            } else {
+                // If scrolled back to top, revert to light theme classes and remove nav background
+                $('.header__donation').removeClass('header__donation--dark').addClass('header__donation--light');
+                $('.button__primary').removeClass('button__primary--dark').addClass('button__primary--light');
+                
+                $('.header__nav').css('background-color', 'transparent'); // Remove background color
+                $('.nav__link').css('color', ''); // Revert link colors to stylesheet default
+                $('.nav__logo a').css('color', ''); // Revert logo color to stylesheet default
+                $('.nav__language-switch').css('color', ''); // Revert Language button color to stylesheet default
+                $('.nav-toggle').css('color', ''); // Revert logo color to stylesheet default
+            }
+        }
+
+        // Run the checkScroll function whenever the page is scrolled
+        $(window).scroll(checkScroll);
+
+        // Run it once on page load too, in case the page starts scrolled down
+        checkScroll();
+    });
+
+    // TESTIMONIALS
+    document.addEventListener('DOMContentLoaded', function() {
+        // Testimonials data
+        const testimonials = [
+            {
+                text: `“The understanding of form, materials and texture and how a sustainably built space can integrate into the natural environment, to create something of beauty, is to be admired. It’s not just what their spaces look like, it’s how they feel – how they work from an aesthetic as well as practical point of view”`,
+                author: "Katrine Binne"
+            },
+            {
+                text: `Lokaal 47 is simply the best! Their energy and commitment to excellence are unmatched. I can't recommend their services enough! Every aspect of the interaction was beyond my expectations—truly first-class!”`,
+                author: "Client 2"
+            },
+            {
+                text: `“Testimonial 3 text goes here. More kind words from our wonderful clientele!”`,
+                author: "Client 3"
+            },
+            {
+                text: `“Testimonial 4 text goes here. They loved our service and support!”`,
+                author: "Client 4"
+            },
+            {
+                text: `“Testimonial 5 text goes here. Last but not least, amazing feedback from another valued customer!”`,
+                author: "Client 5"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        // Function to update the testimonial
+        function updateTestimonial(index) {
+            const testimonialText = document.querySelector('.testimonial__text');
+            const testimonialAuthor = document.querySelector('.testimonial__author');
+            const currentPageIndicator = document.querySelector('.testimonials__current');
+
+            testimonialText.textContent = testimonials[index].text;
+            testimonialAuthor.textContent = testimonials[index].author;
+            currentPageIndicator.textContent = index + 1;
+        }
+
+        // Click events for arrows
+        document.querySelector('.testimonials__arrow--left').addEventListener('click', function() {
+            if (currentIndex > 0) {
+                currentIndex -= 1;
+            } else {
+                currentIndex = testimonials.length - 1;  // Go to the last testimonial if at the first
+            }
+            updateTestimonial(currentIndex);
+        });
+
+        document.querySelector('.testimonials__arrow--right').addEventListener('click', function() {
+            if (currentIndex < testimonials.length - 1) {
+                currentIndex += 1;
+            } else {
+                currentIndex = 0;  // Go back to the first testimonial if at the last
+            }
+            updateTestimonial(currentIndex);
+        });
+
+        // Initialize the first testimonial
+        updateTestimonial(0);
+    });
+
+
+    // FACILITIES 
+    const slider = document.querySelector('.facilities__container');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX); //scroll speed
+        slider.scrollLeft = scrollLeft - walk;
+    });
+
+    //BUTTONS
+        document.querySelector('.home-about__button').addEventListener('click', (event) => {
+            window.location.href = '/en/about';
+        });
+
+        document.querySelector('.partners__button').addEventListener('click', (event) => {
+            window.location.href = '/en/about';
+        });
+
+
+
+    // PRELOAD IMAGES
+    document.addEventListener('DOMContentLoaded', () => {
+    const imageSources = [
+        '/Photos/highlights-photo.png',
+        '/Photos/highlights-photo-2.png',
+    ];
+
+    // Preload images
+    imageSources.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+
+    // Rest of your code for managing highlights
+});
+    
+    // HIGHLIGHTS
+    document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const highlightsSection = document.querySelector('.highlights');
+    const features = document.querySelectorAll('.highlights__feature');
+    const totalPages = features.length;
+    const currentPageSpan = document.querySelector('.highlights__current-page');
+    const totalPagesSpan = document.querySelector('.highlights__total-pages');
+    totalPagesSpan.textContent = '04'; // As there are 4 features
+
+    // Initialize the first feature as active
+    features[currentIndex].classList.add('active');
+    features[currentIndex].style.display = 'block';
+    currentPageSpan.textContent = '01';
+
+    function updateFeatures(direction) {
+        features[currentIndex].classList.remove('active');
+        features[currentIndex].style.display = 'none'; // Hide the current feature completely
+
+        if (direction === 'next') {
+            currentIndex = (currentIndex + 1) % totalPages;
+        } else {
+            currentIndex = (currentIndex - 1 + totalPages) % totalPages;
+        }
+
+        features[currentIndex].classList.add('active');
+        features[currentIndex].style.display = 'block'; // Show the new active feature
+        features[currentIndex].style.opacity = '1';
+        currentPageSpan.textContent = String(currentIndex + 1).padStart(2, '0');
+
+        updateBackground(currentIndex);
+    }
+
+    function updateBackground(index) {
+        highlightsSection.classList.remove('highlights__nature', 'highlights__food', 'highlights__meet', 'highlights__activities');
+        const backgroundClasses = ['highlights__nature', 'highlights__food', 'highlights__meet', 'highlights__activities'];
+        highlightsSection.classList.add(backgroundClasses[index]);
+    }
+
+    document.querySelector('.highlights__arrow--right').addEventListener('click', () => {
+        updateFeatures('next');
+    });
+
+    document.querySelector('.highlights__arrow--left').addEventListener('click', () => {
+        updateFeatures('previous');
+    });
+});
+
+    </script>
+</body>
+</html>

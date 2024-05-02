@@ -1,0 +1,136 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="canonical" href="https://www.yourdomain.com/booking-desktop/booking">
+    <link rel="alternate" media="only screen and (min-width: 769px)" href="https://www.yourdomain.com/booking-desktop/booking">
+
+</head>
+<body>
+    <header>
+        <nav class="booking__nav">
+            <a href="/en/index.html">Lokaal 47</a>
+            <a href="#" class="language-switch">NL</a>
+        </nav>
+    </header>
+    <main class="booking booking--step1">
+        <form action="/submit-booking" method="post" class="booking-form">
+            <div class="booking-form__group">
+                <!--Booking Day-->
+                <div class="booking-form__field booking-form__field--day">
+                    <label for="date" class="booking-form__label | booking-heading--sm">Day</label>
+                    <input type="text" id="date" name="date" class="booking-form__input booking-form__input--date" readonly placeholder="dd/mm/yyyy">
+                </div>
+
+                <!--Booking Time-->
+                <div class="booking-form__field booking-form__field--time">
+                    <label for="time" class="booking-form__label | booking-heading--sm">Time Slot</label>
+                    <select name="time" id="time" class="booking-form__select">
+                        <option value="full-day" class="booking-form__option | time">9AM – 8PM</option>
+                        <option value="morning" class="booking-form__option | time">9AM – 3PM</option>
+                        <option value="evening" class="booking-form__option | time">3PM – 8PM</option>
+                    </select>
+                </div>
+
+                <!--Booking Number of Guests-->
+                <div class="booking-form__field booking-form__field--guests">
+                    <label for="guests" class="booking-form__label | booking-heading--sm">Guests</label>
+                    <select name="guests" id="guests" class="booking-form__select">
+                        <option value="1" class="booking-form__option">1</option>
+                        <option value="2" class="booking-form__option">2</option>
+                        <option value="3" class="booking-form__option">3</option>
+                        <option value="4" class="booking-form__option">4</option>
+                        <option value="5" class="booking-form__option">5</option>
+                        <option value="6" class="booking-form__option">6</option>
+                        <option value="7" class="booking-form__option">7</option>
+                        <option value="8" class="booking-form__option">8</option>
+                        <option value="9" class="booking-form__option">9</option>
+                        <option value="10" class="booking-form__option">10</option>
+                        <option value="11" class="booking-form__option">11</option>
+                        <option value="12" class="booking-form__option">12</option>
+                        <option value="13" class="booking-form__option">13</option>
+                        <option value="14" class="booking-form__option">14</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--Booking Total Costs-->
+            <div class="booking-form__total">
+                <p class="booking-form__total-text | booking-heading--sm">Total costs</p>
+                <p class="booking-form__total-price"></p>
+            </div>
+            <input type="submit" value="Continue" class="button__primary button__primary--dark" id="button-continue">
+        </form>
+        <div class="booking__parking-information">
+            <div class="booking__parking-head">
+                <h2 class="booking__parking-heading | booking-heading">Parking Information</h2>
+                <svg class="booking__parking-arrow" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                </svg>
+            </div>
+            <p class="booking__parking-description">
+                Our venue offers <span class="booking__parking-spaces-span | info-color">3 complimentary, on-site parking spots</span> for your convenience. 
+                Looking for more? We have 10 spots within a 3-5 minute walk, bookable for 12 euros each through “Additional” tab in add-ons section. 
+                We encourage you to opt for more sustainable travel options like biking, carpooling, or walking to help us care for the environment.
+            </p>
+        </div>
+    </main>
+
+    <!-- Include the footer -->
+    <footer>
+        <div class="footer__logo-wrapper">
+            <p class="footer__logo">Lokaal 47</p>
+        </div>
+        <div class="footer__flex-wrapper">
+            <div class="footer__flex-container footer__flex-container--top">
+                <nav class="footer__nav">
+                    <h4 class="footer__title">Info</h4>
+                    <ul class="footer__list" role="list">
+                        <li class="footer__item"><a href="/en/events" class="footer__link">Agenda</a></li>
+                        <li class="footer__item"><a href="/en/about" class="footer__link">Discover Lokaal 47</a></li>
+                        <li class="footer__item"><a href="/en/impact" class="footer__link">Impact</a></li>
+                        <li class="footer__item"><a href="/en/faq" class="footer__link">FAQ</a></li>
+                        <li class="footer__item"><a href="/en/contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__contact">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact-info">
+                        <p class="footer__address">Olaf Palmestraat 1 <br>2616LN Delft</p>
+                        <a href="mailto:">info@lokaal47.nl</a>
+                        <a href="tel:+">316 123 456</a>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <a href="" class="footer__social-link">
+                        <img src="/Photos/instagram-icon.png" alt="Instagram icon" class="footer__social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__flex-container footer__flex-container--bottom">
+                <p class="footer__copyright">© 2021 Lokaal 47</p>
+                <div class="footer__legal">
+                    <a href="/en/privacy-policy" class="footer__link footer__link--legal">Privacy Policy</a>
+                    <a href="/en/cookies-policy" class="footer__link footer__link--legal">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/Scripts/booking-script.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            document.querySelector('#button-continue').addEventListener('click', (event) => {
+                event.preventDefault();
+                window.location.href = '/en/booking-step-2';
+            });
+        });
+
+    </script>
+</body>
+</html>

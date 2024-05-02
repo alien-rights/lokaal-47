@@ -1,0 +1,699 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="booking__nav">
+            <a href="/en/index.html">Lokaal 47</a>
+            <a href="#" class="language-switch">NL</a>
+        </nav>
+    </header>
+    <main class="booking booking--step2" id="booking__section--add-ons">
+        <h1 class=" | booking-heading">Add-ons</h1>
+        <form action="/submit-booking" method="post" class="booking-form booking-form--step2">
+            <nav class="add-ons__nav">
+                
+                <p role="button" data-section="food-and-beverage" class="booking-form__nav-item">Food and beverage</p>
+                
+                <p role="button" data-section="experiences" class="booking-form__nav-item">Experiences</p>
+                
+                <p role="button" data-section="additional" class="booking-form__nav-item">Additional</p>
+                
+            </nav>
+            <!-- <nav class="add-ons__nav">
+                <p role="button" data-section="food-beverage" class="booking-form__nav-item booking-form__nav-item--current">Food and beverage</p>
+                <p role="button" data-section="experiences" class="booking-form__nav-item">Experiences</p>
+                <p role="button" data-section="additional" class="booking-form__nav-item">Additional</p>
+            </nav> -->
+
+            <!-- ADD-ON SECTIONS -->
+            
+            
+            <!-- For every section in booking_add_ons -->
+            <section class="booking-form__section booking-form__section--food-and-beverage">
+                <h2 class="booking-form__heading | booking-heading--sm">Food and beverage</h2>
+                
+                <div class="booking-form__options">
+
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Lunch</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--lunch" data-dialog="dialog--whats-included--lunch">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have more than 0 suboptions -->
+                        <div class="booking-form__suboption">
+                            
+                                <!-- Suboption-->
+                                <div class="clicker clicker__lunch--basic" aria-labelledby="lunch-basic-label">
+                                    <p aria-label="lunch-basic-label" id="lunch-basic-label" class="booking-form__suboption-title">Basic</p>
+                                    <div class="booking-form__quantity-selector booking-form__quantity-selector--lunch">
+                                        <button aria-label="Decrease number of basic lunch" class="booking-form__quantity-btn" type="button">-</button>
+                                        <input type="number" name="lunchbasic" id="lunch-basic__input" class="booking-form__quantity-input" value="0">
+                                        <button aria-label="Increase number of basic lunch" class="booking-form__quantity-btn" type="button">+</button>
+                                    </div>
+                                </div>
+                            
+                                <!-- Suboption-->
+                                <div class="clicker clicker__lunch--vegan" aria-labelledby="lunch-vegan-label">
+                                    <p aria-label="lunch-vegan-label" id="lunch-vegan-label" class="booking-form__suboption-title">Vegan</p>
+                                    <div class="booking-form__quantity-selector booking-form__quantity-selector--lunch">
+                                        <button aria-label="Decrease number of vegan lunch" class="booking-form__quantity-btn" type="button">-</button>
+                                        <input type="number" name="lunchvegan" id="lunch-vegan__input" class="booking-form__quantity-input" value="0">
+                                        <button aria-label="Increase number of vegan lunch" class="booking-form__quantity-btn" type="button">+</button>
+                                    </div>
+                                </div>
+                            
+                                <!-- Suboption-->
+                                <div class="clicker clicker__lunch--gluten-free" aria-labelledby="lunch-gluten-free-label">
+                                    <p aria-label="lunch-gluten-free-label" id="lunch-gluten-free-label" class="booking-form__suboption-title">Gluten Free</p>
+                                    <div class="booking-form__quantity-selector booking-form__quantity-selector--lunch">
+                                        <button aria-label="Decrease number of gluten free lunch" class="booking-form__quantity-btn" type="button">-</button>
+                                        <input type="number" name="lunchglutenfree" id="lunch-gluten-free__input" class="booking-form__quantity-input" value="0">
+                                        <button aria-label="Increase number of gluten free lunch" class="booking-form__quantity-btn" type="button">+</button>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Coffee Service</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--coffee-service" data-dialog="dialog--whats-included--coffee-service">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__coffee-service" aria-labelledby="coffee-service">
+                            <p class="booking-form__price">€12 per person</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--coffee-service">
+                                <button aria-label="Decrease number of coffee service" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="coffee-service" id="coffee-service__input" class="booking-form__quantity-input" value="0" aria-labelledby="coffee-service">
+                                <button aria-label="Increase number of coffee service" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Drinks and Platters</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--drinks-and-platters" data-dialog="dialog--whats-included--drinks-and-platters">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__drinks-and-platters" aria-labelledby="drinks-and-platters">
+                            <p class="booking-form__price">€12 per person</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--drinks-and-platters">
+                                <button aria-label="Decrease number of drinks and platters" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="drinks-and-platters" id="drinks-and-platters__input" class="booking-form__quantity-input" value="0" aria-labelledby="drinks-and-platters">
+                                <button aria-label="Increase number of drinks and platters" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Wine Tasting</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--wine-tasting" data-dialog="dialog--whats-included--wine-tasting">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__wine-tasting" aria-labelledby="wine-tasting">
+                            <p class="booking-form__price">€12 per person</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--wine-tasting">
+                                <button aria-label="Decrease number of wine tasting" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="wine-tasting" id="wine-tasting__input" class="booking-form__quantity-input" value="0" aria-labelledby="wine-tasting">
+                                <button aria-label="Increase number of wine tasting" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Dinner</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--dinner" data-dialog="dialog--whats-included--dinner">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__dinner" aria-labelledby="dinner">
+                            <p class="booking-form__price">€12 per person</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--dinner">
+                                <button aria-label="Decrease number of dinner" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="dinner" id="dinner__input" class="booking-form__quantity-input" value="0" aria-labelledby="dinner">
+                                <button aria-label="Increase number of dinner" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                        
+                </div>
+            </section>
+            
+            
+            <!-- For every section in booking_add_ons -->
+            <section class="booking-form__section booking-form__section--experiences">
+                <h2 class="booking-form__heading | booking-heading--sm">Experiences</h2>
+                
+                <div class="booking-form__alert">
+                    <h3 class="booking-form__alert-title | booking-heading--sm">! Heads up</h3>
+                        
+                        <p class="booking-form__alert-text">This is just the first step. We will now proceed to contact the organizers of the experiences you&#39;re interested in to confirm their availability. Once we have all the necessary information, we will reach out to you with details. Please note that payment for the experiences will only be requested if and when we can confirm their availability.</p>
+                        
+                </div>
+                
+                <div class="booking-form__options">
+
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Workshop “Meet Yourself”</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--workshop-“meet-yourself”" data-dialog="dialog--whats-included--workshop-“meet-yourself”">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__workshop-“meet-yourself”" aria-labelledby="workshop-“meet-yourself”">
+                            <p class="booking-form__price">€200 per group</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--workshop-“meet-yourself”">
+                                <button aria-label="Decrease number of workshop “meet yourself”" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="workshop-“meet-yourself”" id="workshop-“meet-yourself”__input" class="booking-form__quantity-input" value="0" aria-labelledby="workshop-“meet-yourself”">
+                                <button aria-label="Increase number of workshop “meet yourself”" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Workshop “Listening and Asking Questions”</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--workshop-“listening-and-asking-questions”" data-dialog="dialog--whats-included--workshop-“listening-and-asking-questions”">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__workshop-“listening-and-asking-questions”" aria-labelledby="workshop-“listening-and-asking-questions”">
+                            <p class="booking-form__price">€200 per group</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--workshop-“listening-and-asking-questions”">
+                                <button aria-label="Decrease number of workshop “listening and asking questions”" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="workshop-“listening-and-asking-questions”" id="workshop-“listening-and-asking-questions”__input" class="booking-form__quantity-input" value="0" aria-labelledby="workshop-“listening-and-asking-questions”">
+                                <button aria-label="Increase number of workshop “listening and asking questions”" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Workshop “Visionboard”</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--workshop-“visionboard”" data-dialog="dialog--whats-included--workshop-“visionboard”">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__workshop-“visionboard”" aria-labelledby="workshop-“visionboard”">
+                            <p class="booking-form__price">€200 per group</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--workshop-“visionboard”">
+                                <button aria-label="Decrease number of workshop “visionboard”" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="workshop-“visionboard”" id="workshop-“visionboard”__input" class="booking-form__quantity-input" value="0" aria-labelledby="workshop-“visionboard”">
+                                <button aria-label="Increase number of workshop “visionboard”" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Workshop “How To Manage Transgressive Behavior”</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--workshop-“how-to-manage-transgressive-behavior”" data-dialog="dialog--whats-included--workshop-“how-to-manage-transgressive-behavior”">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__workshop-“how-to-manage-transgressive-behavior”" aria-labelledby="workshop-“how-to-manage-transgressive-behavior”">
+                            <p class="booking-form__price">€200 per group</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--workshop-“how-to-manage-transgressive-behavior”">
+                                <button aria-label="Decrease number of workshop “how to manage transgressive behavior”" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="workshop-“how-to-manage-transgressive-behavior”" id="workshop-“how-to-manage-transgressive-behavior”__input" class="booking-form__quantity-input" value="0" aria-labelledby="workshop-“how-to-manage-transgressive-behavior”">
+                                <button aria-label="Increase number of workshop “how to manage transgressive behavior”" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Workshop “How To Prepare Healthy and Energetic Food in 20 Minutes”</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--workshop-“how-to-prepare-healthy-and-energetic-food-in-20-minutes”" data-dialog="dialog--whats-included--workshop-“how-to-prepare-healthy-and-energetic-food-in-20-minutes”">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__workshop-“how-to-prepare-healthy-and-energetic-food-in-20-minutes”" aria-labelledby="workshop-“how-to-prepare-healthy-and-energetic-food-in-20-minutes”">
+                            <p class="booking-form__price">€200 per group</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--workshop-“how-to-prepare-healthy-and-energetic-food-in-20-minutes”">
+                                <button aria-label="Decrease number of workshop “how to prepare healthy and energetic food in 20 minutes”" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="workshop-“how-to-prepare-healthy-and-energetic-food-in-20-minutes”" id="workshop-“how-to-prepare-healthy-and-energetic-food-in-20-minutes”__input" class="booking-form__quantity-input" value="0" aria-labelledby="workshop-“how-to-prepare-healthy-and-energetic-food-in-20-minutes”">
+                                <button aria-label="Increase number of workshop “how to prepare healthy and energetic food in 20 minutes”" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Workshop “Happiness at Work”</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--workshop-“happiness-at-work”" data-dialog="dialog--whats-included--workshop-“happiness-at-work”">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__workshop-“happiness-at-work”" aria-labelledby="workshop-“happiness-at-work”">
+                            <p class="booking-form__price">€200 per group</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--workshop-“happiness-at-work”">
+                                <button aria-label="Decrease number of workshop “happiness at work”" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="workshop-“happiness-at-work”" id="workshop-“happiness-at-work”__input" class="booking-form__quantity-input" value="0" aria-labelledby="workshop-“happiness-at-work”">
+                                <button aria-label="Increase number of workshop “happiness at work”" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Photo-shoot “Business Profile &amp; Team Photo”</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--photo-shoot-“business-profile-&amp;-team-photo”" data-dialog="dialog--whats-included--photo-shoot-“business-profile-&amp;-team-photo”">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__photo-shoot-“business-profile-&amp;-team-photo”" aria-labelledby="photo-shoot-“business-profile-&amp;-team-photo”">
+                            <p class="booking-form__price">€200 per group</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--photo-shoot-“business-profile-&amp;-team-photo”">
+                                <button aria-label="Decrease number of photo-shoot “business profile &amp; team photo”" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="photo-shoot-“business-profile-&amp;-team-photo”" id="photo-shoot-“business-profile-&amp;-team-photo”__input" class="booking-form__quantity-input" value="0" aria-labelledby="photo-shoot-“business-profile-&amp;-team-photo”">
+                                <button aria-label="Increase number of photo-shoot “business profile &amp; team photo”" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Outdoor: Hugging Trees</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--outdoor:-hugging-trees" data-dialog="dialog--whats-included--outdoor:-hugging-trees">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__outdoor:-hugging-trees" aria-labelledby="outdoor:-hugging-trees">
+                            <p class="booking-form__price">€200 per group</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--outdoor:-hugging-trees">
+                                <button aria-label="Decrease number of outdoor: hugging trees" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="outdoor:-hugging-trees" id="outdoor:-hugging-trees__input" class="booking-form__quantity-input" value="0" aria-labelledby="outdoor:-hugging-trees">
+                                <button aria-label="Increase number of outdoor: hugging trees" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Outdoor: SUP</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--outdoor:-sup" data-dialog="dialog--whats-included--outdoor:-sup">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__outdoor:-sup" aria-labelledby="outdoor:-sup">
+                            <p class="booking-form__price">€200 per group</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--outdoor:-sup">
+                                <button aria-label="Decrease number of outdoor: sup" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="outdoor:-sup" id="outdoor:-sup__input" class="booking-form__quantity-input" value="0" aria-labelledby="outdoor:-sup">
+                                <button aria-label="Increase number of outdoor: sup" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Outdoor: Birdwatching</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--outdoor:-birdwatching" data-dialog="dialog--whats-included--outdoor:-birdwatching">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__outdoor:-birdwatching" aria-labelledby="outdoor:-birdwatching">
+                            <p class="booking-form__price">€200 per group</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--outdoor:-birdwatching">
+                                <button aria-label="Decrease number of outdoor: birdwatching" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="outdoor:-birdwatching" id="outdoor:-birdwatching__input" class="booking-form__quantity-input" value="0" aria-labelledby="outdoor:-birdwatching">
+                                <button aria-label="Increase number of outdoor: birdwatching" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                        
+                </div>
+            </section>
+            
+            
+            <!-- For every section in booking_add_ons -->
+            <section class="booking-form__section booking-form__section--additional">
+                <h2 class="booking-form__heading | booking-heading--sm">Additional</h2>
+                
+                <div class="booking-form__alert">
+                    <h3 class="booking-form__alert-title | booking-heading--sm">! Heads up</h3>
+                        
+                        <p class="booking-form__alert-text">We offer 10 additional parking spots conveniently located just a 3-5 minute walk from Lokaal 47.
+Following your booking, you will be asked to provide the license plate number of the vehicle you&#39;ll be arriving in via email.
+This step ensures that parking is reserved exclusively for our guests who have booked these spots.</p>
+                        
+                </div>
+                
+                <div class="booking-form__options">
+
+                    
+                    <!-- For every add_on in add_ons -->
+
+                    <div class="booking-form__option">
+                        <h3 class="booking-form__option-title | booking-heading--xs">Parking</h3>
+                        <button aria-expanded="false" aria-controls="included-popup" class="booking-form__info-button whats-included--parking" data-dialog="dialog--whats-included--parking">What's included?</button>
+                    
+                        
+                        
+                        <!--If we have 0 suboptions -->
+                        <div class="clicker clicker__parking" aria-labelledby="parking">
+                            <p class="booking-form__price">€7.50 per spot</p>
+                            <div class="booking-form__quantity-selector booking-form__quantity-selector--parking">
+                                <button aria-label="Decrease number of parking" class="booking-form__quantity-btn" type="button">-</button>
+                                <input type="number" name="parking" id="parking__input" class="booking-form__quantity-input" value="0" aria-labelledby="parking">
+                                <button aria-label="Increase number of parking" class="booking-form__quantity-btn" type="button">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                        
+                </div>
+            </section>
+            
+
+
+
+
+            <!-- Booking Total -->
+            <div class="booking-form__total">
+                <p class="booking-form__total-text  | booking-heading--sm">Total costs</p>
+                <p class="booking-form__total-cost">€2000</p>
+            </div>
+            <input type="submit" value="Continue" class="button__primary button__primary--dark" id="button-continue">
+        </form>
+        <div class="booking__parking-information">
+            <div class="booking__parking-head">
+                <h2 class="booking__parking-heading | booking-heading">Parking Information</h2>
+                <svg class="booking__parking-arrow" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M9 15L0.339745 0L17.6603 0L9 15Z" fill="#252525"/>
+                </svg>
+            </div>
+            <p class="booking__parking-description">
+                Our venue offers <span class="booking__parking-spaces-span | info-color">3 complimentary, on-site parking spots</span> for your convenience. 
+                Looking for more? We have 10 spots within a 3-5 minute walk, bookable for 12 euros each through “Additional” tab in add-ons section. 
+                We encourage you to opt for more sustainable travel options like biking, carpooling, or walking to help us care for the environment.
+            </p>
+        </div>
+    </main>
+
+    <!-- Include the footer -->
+    <footer>
+        <div class="footer__logo-wrapper">
+            <p class="footer__logo">Lokaal 47</p>
+        </div>
+        <div class="footer__flex-wrapper">
+            <div class="footer__flex-container footer__flex-container--top">
+                <nav class="footer__nav">
+                    <h4 class="footer__title">Info</h4>
+                    <ul class="footer__list" role="list">
+                        <li class="footer__item"><a href="/en/events" class="footer__link">Agenda</a></li>
+                        <li class="footer__item"><a href="/en/about" class="footer__link">Discover Lokaal 47</a></li>
+                        <li class="footer__item"><a href="/en/impact" class="footer__link">Impact</a></li>
+                        <li class="footer__item"><a href="/en/faq" class="footer__link">FAQ</a></li>
+                        <li class="footer__item"><a href="/en/contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__contact">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact-info">
+                        <p class="footer__address">Olaf Palmestraat 1 <br>2616LN Delft</p>
+                        <a href="mailto:">info@lokaal47.nl</a>
+                        <a href="tel:+">316 123 456</a>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <a href="" class="footer__social-link">
+                        <img src="/Photos/instagram-icon.png" alt="Instagram icon" class="footer__social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__flex-container footer__flex-container--bottom">
+                <p class="footer__copyright">© 2021 Lokaal 47</p>
+                <div class="footer__legal">
+                    <a href="/en/privacy-policy" class="footer__link footer__link--legal">Privacy Policy</a>
+                    <a href="/en/cookies-policy" class="footer__link footer__link--legal">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHAT'S INCLUDED POP-UPS -->
+    
+    
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--lunch" id="dialog--whats-included--lunch">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="http://localhost:8080/Photos/sustainability-photo.png" alt="" class="dialog__image">
+                <h2 class="dialog__title">Lunch</h2>
+                <p class="dialog__description">A selection of sandwiches, salads, and a soup of the day, made with locally-sourced ingredients. This light yet satisfying meal is perfect for a midday break.</p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--coffee-service" id="dialog--whats-included--coffee-service">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="http://localhost:8080/Photos/sustainability-photo.png" alt="" class="dialog__image">
+                <h2 class="dialog__title">Coffee Service</h2>
+                <p class="dialog__description">A selection of sandwiches, salads, and a soup of the day, made with locally-sourced ingredients. This light yet satisfying meal is perfect for a midday break.</p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--drinks-and-platters" id="dialog--whats-included--drinks-and-platters">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="http://localhost:8080/Photos/sustainability-photo.png" alt="" class="dialog__image">
+                <h2 class="dialog__title">Drinks and Platters</h2>
+                <p class="dialog__description">A selection of sandwiches, salads, and a soup of the day, made with locally-sourced ingredients. This light yet satisfying meal is perfect for a midday break.</p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--wine-tasting" id="dialog--whats-included--wine-tasting">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="http://localhost:8080/Photos/sustainability-photo.png" alt="" class="dialog__image">
+                <h2 class="dialog__title">Wine Tasting</h2>
+                <p class="dialog__description">A selection of sandwiches, salads, and a soup of the day, made with locally-sourced ingredients. This light yet satisfying meal is perfect for a midday break.</p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--dinner" id="dialog--whats-included--dinner">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="http://localhost:8080/Photos/sustainability-photo.png" alt="" class="dialog__image">
+                <h2 class="dialog__title">Dinner</h2>
+                <p class="dialog__description">A selection of sandwiches, salads, and a soup of the day, made with locally-sourced ingredients. This light yet satisfying meal is perfect for a midday break.</p>
+            </div>
+        </div>
+    </dialog>
+    
+    
+    
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--workshop-“meet-yourself”" id="dialog--whats-included--workshop-“meet-yourself”">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="http://localhost:8080/Photos/sustainability-photo.png" alt="" class="dialog__image">
+                <h2 class="dialog__title">Workshop “Meet Yourself”</h2>
+                <p class="dialog__description">A selection of sandwiches, salads, and a soup of the day, made with locally-sourced ingredients. This light yet satisfying meal is perfect for a midday break.</p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--workshop-“listening-and-asking-questions”" id="dialog--whats-included--workshop-“listening-and-asking-questions”">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="http://localhost:8080/Photos/sustainability-photo.png" alt="" class="dialog__image">
+                <h2 class="dialog__title">Workshop “Listening and Asking Questions”</h2>
+                <p class="dialog__description">A selection of sandwiches, salads, and a soup of the day, made with locally-sourced ingredients. This light yet satisfying meal is perfect for a midday break.</p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--workshop-“visionboard”" id="dialog--whats-included--workshop-“visionboard”">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="http://localhost:8080/Photos/sustainability-photo.png" alt="" class="dialog__image">
+                <h2 class="dialog__title">Workshop “Visionboard”</h2>
+                <p class="dialog__description">A selection of sandwiches, salads, and a soup of the day, made with locally-sourced ingredients. This light yet satisfying meal is perfect for a midday break.</p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--workshop-“how-to-manage-transgressive-behavior”" id="dialog--whats-included--workshop-“how-to-manage-transgressive-behavior”">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="http://localhost:8080/Photos/sustainability-photo.png" alt="" class="dialog__image">
+                <h2 class="dialog__title">Workshop “How To Manage Transgressive Behavior”</h2>
+                <p class="dialog__description">A selection of sandwiches, salads, and a soup of the day, made with locally-sourced ingredients. This light yet satisfying meal is perfect for a midday break.</p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--workshop-“how-to-prepare-healthy-and-energetic-food-in-20-minutes”" id="dialog--whats-included--workshop-“how-to-prepare-healthy-and-energetic-food-in-20-minutes”">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="" alt="" class="dialog__image">
+                <h2 class="dialog__title">Workshop “How To Prepare Healthy and Energetic Food in 20 Minutes”</h2>
+                <p class="dialog__description"></p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--workshop-“happiness-at-work”" id="dialog--whats-included--workshop-“happiness-at-work”">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="" alt="" class="dialog__image">
+                <h2 class="dialog__title">Workshop “Happiness at Work”</h2>
+                <p class="dialog__description"></p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--photo-shoot-“business-profile-&amp;-team-photo”" id="dialog--whats-included--photo-shoot-“business-profile-&amp;-team-photo”">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="" alt="" class="dialog__image">
+                <h2 class="dialog__title">Photo-shoot “Business Profile &amp; Team Photo”</h2>
+                <p class="dialog__description"></p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--outdoor:-hugging-trees" id="dialog--whats-included--outdoor:-hugging-trees">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="" alt="" class="dialog__image">
+                <h2 class="dialog__title">Outdoor: Hugging Trees</h2>
+                <p class="dialog__description"></p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--outdoor:-sup" id="dialog--whats-included--outdoor:-sup">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="" alt="" class="dialog__image">
+                <h2 class="dialog__title">Outdoor: SUP</h2>
+                <p class="dialog__description"></p>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--outdoor:-birdwatching" id="dialog--whats-included--outdoor:-birdwatching">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="" alt="" class="dialog__image">
+                <h2 class="dialog__title">Outdoor: Birdwatching</h2>
+                <p class="dialog__description"></p>
+            </div>
+        </div>
+    </dialog>
+    
+    
+    
+    
+    <dialog class="dialog dialog--whats-included dialog--whats-included--parking" id="dialog--whats-included--parking">
+        <div class="dialog-flex">
+            <button class="dialog__close-btn dialog__close-btn--whats-included">Close</button>
+            <div class="dialog-content--whats-included">
+                <img src="http://localhost:8080/Photos/sustainability-photo.png" alt="" class="dialog__image">
+                <h2 class="dialog__title">Parking</h2>
+                <p class="dialog__description">A selection of sandwiches, salads, and a soup of the day, made with locally-sourced ingredients. This light yet satisfying meal is perfect for a midday break.</p>
+            </div>
+        </div>
+    </dialog>
+    
+    
+
+    
+    <script src="/Scripts/booking-script.js"></script>
+    <script>
+        document.querySelector('#button-continue').addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = '/en/booking-step-3';
+        });
+    </script>
+</body>
+</html>
