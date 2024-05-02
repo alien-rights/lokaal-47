@@ -564,7 +564,7 @@ h4 {
 /* 7.1 - HOME PAGE */
 /* 7.1.1 Header */
 .home__header {
-    background-image: url(/Photos/header.png);
+    background-image: url(Photos/header.png);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -714,19 +714,19 @@ h4 {
 }
 
 .highlights__nature {
-    background-image: url(/Photos/highlighs-vector.svg), url(/Photos/highlights-photo.png);
+    background-image: url(Photos/highlighs-vector.svg), url(/Photos/highlights-photo.png);
 }
 
 .highlights__food {
-    background-image: url(/Photos/highlighs-vector.svg), url(/Photos/highlights-photo-2.webp);
+    background-image: url(Photos/highlighs-vector.svg), url(/Photos/highlights-photo-2.webp);
 }
 
 .highlights__meet {
-    background-image: url(/Photos/highlighs-vector.svg), url(/Photos/highlights-photo-3.webp);
+    background-image: url(Photos/highlighs-vector.svg), url(/Photos/highlights-photo-3.webp);
 }
 
 .highlights__activities {
-    background-image: url(/Photos/highlighs-vector.svg), url(/Photos/highlights-photo-4.png);
+    background-image: url(Photos/highlighs-vector.svg), url(/Photos/highlights-photo-4.png);
 }
 
 .highlights__feature.highlights__feature--active  {
