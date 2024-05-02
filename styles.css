@@ -128,12 +128,12 @@
 /* 3.0 - GENERAL STYLES: TYPOGRAPHY, COLOR, SPACING */
 @font-face {
     font-family: "Kale Sans Mono";
-    src: url(Fonts/KaleSansMonoTRIAL-Regular.otf);
+    src: url(/lokaal-47/Fonts/KaleSansMonoTRIAL-Regular.otf);
 }
 
 @font-face {
     font-family: "PP Agrandir";
-    src: url(Fonts/PPAgrandir-Regular.otf);
+    src: url(/lokaal-47/Fonts/PPAgrandir-Regular.otf);
 }
 
 html {
