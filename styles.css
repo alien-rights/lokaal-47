@@ -128,12 +128,12 @@
 /* 3.0 - GENERAL STYLES: TYPOGRAPHY, COLOR, SPACING */
 @font-face {
     font-family: "Kale Sans Mono";
-    src: url(/lokaal-47/Fonts/KaleSansMonoTRIAL-Regular.otf);
+    src: url(Fonts/KaleSansMonoTRIAL-Regular.otf);
 }
 
 @font-face {
     font-family: "PP Agrandir";
-    src: url(/lokaal-47/Fonts/PPAgrandir-Regular.otf);
+    src: url(Fonts/PPAgrandir-Regular.otf);
 }
 
 html {
@@ -564,7 +564,7 @@ h4 {
 /* 7.1 - HOME PAGE */
 /* 7.1.1 Header */
 .home__header {
-    background-image: url(/lokaal-47/Photos/header.png);
+    background-image: url(/Photos/header.png);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -714,19 +714,19 @@ h4 {
 }
 
 .highlights__nature {
-    background-image: url(/lokaal-47/Photos/highlighs-vector.svg), url(/lokaal-47/Photos/highlights-photo.png);
+    background-image: url(/Photos/highlighs-vector.svg), url(/Photos/highlights-photo.png);
 }
 
 .highlights__food {
-    background-image: url(/lokaal-47/Photos/highlighs-vector.svg), url(/lokaal-47/Photos/highlights-photo-2.webp);
+    background-image: url(/Photos/highlighs-vector.svg), url(/Photos/highlights-photo-2.webp);
 }
 
 .highlights__meet {
-    background-image: url(/lokaal-47/Photos/highlighs-vector.svg), url(/lokaal-47/Photos/highlights-photo-3.webp);
+    background-image: url(/Photos/highlighs-vector.svg), url(/Photos/highlights-photo-3.webp);
 }
 
 .highlights__activities {
-    background-image: url(/lokaal-47/Photos/highlighs-vector.svg), url(/lokaal-47/Photos/highlights-photo-4.png);
+    background-image: url(/Photos/highlighs-vector.svg), url(/Photos/highlights-photo-4.png);
 }
 
 .highlights__feature.highlights__feature--active  {

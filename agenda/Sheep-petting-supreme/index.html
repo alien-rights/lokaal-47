@@ -1,0 +1,308 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/lokaal-47/">
+    <title>The Leftovers Special</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Include the header -->
+    
+<!-- Other pages header -->
+<header class="sticky-header">
+
+     <div class="header__donation header__donation--dark">
+        <p>So far we donated €<span class="">20 000</span></p>
+    </div>
+    <nav class="header__nav">
+    <div class="nav__logo"><a href="/index.html">Lokaal 47</a></div>
+    <!-- Hamburger toggle button for mobile menu -->
+         <ul class="nav__links " role="list">
+            <li class="nav__item"><a href="/agenda" class="nav__link nav__current-page">Agenda</a></li>
+            <li class="nav__item"><a href="/about" class="nav__link ">Discover Lokaal 47</a></li>
+            <li class="nav__item"><a href="/impact" class="nav__link ">Impact</a></li>
+            <li class="nav__item"><a href="/faq" class="nav__link ">FAQ</a></li>
+            <li class="nav__item"><a href="/contact" class="nav__link ">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+            <a href="/nl/events/index.html" class="nav__language-switch nav__language-switch--dark">nl</a>
+            <button class="button__booking button__primary button__primary--dark">Book Now</button>
+            <button class="nav-toggle nav-toggle-open | nav-toggle--dark" aria-label="open navigation">MENU</button>
+            <button class="nav-toggle nav-toggle-close | nav-toggle--dark" aria-label="close navigation">CLOSE</button>
+        </div>
+    </nav>
+    
+</header>
+
+<script>
+    // Add event listener to the booking button
+    // document.querySelector('.button__booking').addEventListener('click', function() {
+    //     window.location.href = '/booking';
+    // }
+    // );
+    
+    // Add event listeners to the navigation toggle buttons
+    document.querySelector('.nav-toggle-open').addEventListener('click', function() {
+        document.querySelector('.nav__links').classList.add('active');
+        document.querySelector('.nav-toggle-open').style.display = 'none';
+        document.querySelector('.nav-toggle-close').style.display = 'block'; // Show CLOSE
+        document.body.classList.add('body-no-scroll'); // Prevent scrolling
+    });
+
+    document.querySelector('.nav-toggle-close').addEventListener('click', function() {
+        document.querySelector('.nav__links').classList.remove('active');
+        document.querySelector('.nav-toggle-close').style.display = 'none';
+        document.querySelector('.nav-toggle-open').style.display = 'block'; // Show MENU
+        document.body.classList.remove('body-no-scroll'); // Allow scrolling
+    });
+
+
+    // Add event listener to the booking button
+    document.addEventListener('DOMContentLoaded', function() {
+    const bookingButton = document.querySelector('.button__booking');
+
+    bookingButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default button action
+
+        // Check the screen width and redirect accordingly
+        if (window.innerWidth <= 768) {
+            window.location.href = '/booking-step-1';
+        } else {
+            window.location.href = '/booking';
+        }
+    });
+});
+
+
+function adjustNavDisplay() {
+    const navToggleOpen = document.querySelector('.nav-toggle-open');
+    const navToggleClose = document.querySelector('.nav-toggle-close');
+
+    // Check if the screen width is more than 768 pixels
+    if (window.innerWidth > 768) {
+        // For desktop: Ensure that the "MENU" button is hidden and "CLOSE" button is not displayed
+        navToggleOpen.style.display = 'none';
+        navToggleClose.style.display = 'none';
+        document.querySelector('.nav__links').classList.remove('active'); // Also ensure that the nav links are not displayed in active state
+        document.body.classList.remove('body-no-scroll'); // Allow scrolling
+    } else {
+        // For mobile: Ensure that the correct toggle button is displayed
+        if (document.querySelector('.nav__links').classList.contains('active')) {
+            navToggleOpen.style.display = 'none';
+            navToggleClose.style.display = 'block';
+        } else {
+            navToggleOpen.style.display = 'block';
+            navToggleClose.style.display = 'none';
+        }
+    }
+}
+
+// Add event listeners for both DOMContentLoaded and resize events
+document.addEventListener('DOMContentLoaded', adjustNavDisplay); // Initial adjustment when document is ready
+window.addEventListener('resize', adjustNavDisplay); // Adjust every time the window is resized
+
+
+
+</script>
+    
+    <main class="specific-event">
+        <div class="specific-event__text-container">
+            <section class="specific-event__details">
+                <div class="specific-event__status specific-event__flex">
+                    <p class="specific-event__accessibility">This is event is free</p>
+                    <p class="specific-event_availability"><span class="event__spots">5</span> spots available</p>
+                </div>
+                <h1 class="specific-event__title">Sheep petting supreme</h1>
+                <div class="specific-event__info-block specific-event__flex">
+                    <div class="specific-event__time">
+                        <p class="time">4:00PM - 8:00PM</p>
+                        <time datetime="2024-03-20" class="time">WED, MAR 20TH</time>
+                    </div>
+                    <button class="button__primary button__primary--dark reserve-btn">Reserve a spot</button>
+                </div>
+                <p class="specific-event__description">
+                    This Thanksgiving, leave no leftovers behind. Prep for Thanksgiving (and the days after) with Melissa Clark and Vaughn Vreeland at iconic sandwich shops.
+                </p>
+            </section>
+            <section class="specific-event__admission">
+                <h4 class="specific-event__admission-title">Your Admission Includes</h4>
+                <ul class="specific-event__list specific-event__admission__list" role="list">
+                    
+                      <li class="specific-event__list-item">Cooking demonstration and tasting with Melissa Clark or Vaugh Vreeland.</li>
+                    
+                      <li class="specific-event__list-item">Q. and A. session with Melissa Clark or Vaughn Vreeland.</li>
+                    
+                      <li class="specific-event__list-item">Complimentary to-go Thanksgiving leftovers sandwich from your host restaurant.</li>
+                    
+                  </ul>
+            </section>
+            <section class="specific-event__itinerary">
+                <h4 class="specific-event__itinerary-title">Itinerary</h4>
+                <ul class="specific-event__list">
+                    
+                    
+                        
+                            
+                <li class="specific-event__list-item">
+                    <time class="specific-event__time-point" datetime="">16:00</time> – Masa Memory cacao Champurrado welcome drink. Champurrado is a chocolate-based atole, a warm and thick Mexican beverage, made with masa harina.
+                </li>
+            
+        
+                        
+                            
+                <li class="specific-event__list-item">
+                    <time class="specific-event__time-point" datetime="">16:30</time> – Maiz soaking and grinding how to.
+                </li>
+            
+        
+                        
+                            
+                <li class="specific-event__list-item">
+                    <time class="specific-event__time-point" datetime="">17:15</time> – Tamal making workshop.
+                </li>
+            
+        
+                        
+                            
+                <li class="specific-event__list-item">
+                    <time class="specific-event__time-point" datetime="">18:15</time> – Farmer&#39;s market snack before a farm walk.
+                </li>
+            
+        
+                        
+                            
+                <li class="specific-event__list-item">
+                    <time class="specific-event__time-point" datetime="">18:30</time> – Farm walk to visit the avocado orchards, animals and fruit trees.
+                </li>
+            
+        
+                        
+                            
+                <li class="specific-event__list-item">
+                    <time class="specific-event__time-point" datetime="">19:15</time> – Return to collect tamales out of their cooking pots and make boxes to take home.
+                </li>
+            
+        
+                        
+        
+    </ul>
+                </ul>
+            </section>
+            <section class="specific-event__hosts">
+                <h4 class="specific-event__hosts-title">Your Hosts</h4>
+                <div class="specific-event__hosts-container">
+                    
+                    <div class="specific-event__host">
+                        <h5 class="specific-event__host-name">Vaughn Vreeland</h5>
+                        <p class="specific-event__host-description">Vaughn Vreeland has been a columnist for the Food section since 2007. She reports on trends, creates recipes and appears in cooking videos linked to her column, A Good Appetite, She&#39;s also written dozens of cookbooks. A native of Brooklyn, she knows where to find the best bagel.</p>
+                    </div>
+                    
+                    <div class="specific-event__host">
+                        <h5 class="specific-event__host-name">Melissa Clark</h5>
+                        <p class="specific-event__host-description">Melissa Clark has been a columnist for the Food section since 2007. She reports on trends, creates recipes and appears in cooking videos linked to her column, A Good Appetite, She&#39;s also written dozens of cookbooks. A native of Brooklyn, she knows where to find the best bagel.</p>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+        <div class="specific-event__image-container">
+            <img src="https://i.pinimg.com/originals/da/57/2f/da572f4c9bc219b4ed6a7c9b68510d04.gif" alt="some alt text" class="specific-event__image">
+        </div>
+
+        <!-- Dialog for event registration -->
+        <dialog class="dialog dialog--event-registration">
+            <form action="" method="post" class="dialog__form">
+                <button class="dialog__close-btn">Close</button>
+                <div class="dialog__content dialog__content--event-registration">
+                    <h2 class="dialog__title">Sheep petting supreme</h2>
+                    <div class="dialog__alert">
+                        <h3 class="dialog__alert-title">! Heads Up</h3>
+                        <p class="dialog__alert--description">Our events are all about bringing people together! They're a go with <span class="| info-color">at least 3 attendees</span> on board. If we're short on numbers, unfortunately, we'll have to reluctantly cancel.</p>
+                    </div>
+                    <div class="dialog__form-group">
+                        <div class="dialog__input-container">
+                            <label for="name" class="dialog__label">Name*</label>
+                            <input type="text" id="name" name="name" class="dialog__input" required>
+                        </div>
+                        <div class="dialog__input-container">
+                            <label for="email" class="dialog__label">Email Address*</label>
+                            <input type="email" id="email" name="email" class="dialog__input" required>
+                        </div>
+                    </div>
+                    <p class="dialog__consent">By submitting this information, you agree to <a href="#">Privacy Policy</a></p>
+                    <input type="submit" value="Reserve a Spot" class="dialog__submit-btn button__primary button__primary--dark">
+                </div>
+            </form>
+        </dialog>
+    </main>
+
+    <!-- Include the footer -->
+    <footer>
+        <div class="footer__logo-wrapper">
+            <p class="footer__logo">Lokaal 47</p>
+        </div>
+        <div class="footer__flex-wrapper">
+            <div class="footer__flex-container footer__flex-container--top">
+                <nav class="footer__nav">
+                    <h4 class="footer__title">Info</h4>
+                    <ul class="footer__list" role="list">
+                        <li class="footer__item"><a href="/agenda" class="footer__link">Agenda</a></li>
+                        <li class="footer__item"><a href="/about" class="footer__link">Discover Lokaal 47</a></li>
+                        <li class="footer__item"><a href="/impact" class="footer__link">Impact</a></li>
+                        <li class="footer__item"><a href="/faq" class="footer__link">FAQ</a></li>
+                        <li class="footer__item"><a href="/contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__contact">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact-info">
+                        <p class="footer__address">Olaf Palmestraat 1 <br>2616LN Delft</p>
+                        <a href="mailto:">info@lokaal47.nl</a>
+                        <a href="tel:+">316 123 456</a>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <a href="" class="footer__social-link">
+                        <img src="/Photos/instagram-icon.png" alt="Instagram icon" class="footer__social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__flex-container footer__flex-container--bottom">
+                <p class="footer__copyright">© 2021 Lokaal 47</p>
+                <div class="footer__legal">
+                    <a href="/privacy-policy" class="footer__link footer__link--legal">Privacy Policy</a>
+                    <a href="/cookies-policy" class="footer__link footer__link--legal">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/Scripts/general-scripts.js"></script>
+    <script>
+        const dialog = document.querySelector('.dialog--event-registration');
+        const openDialogButton = document.querySelector('.reserve-btn');
+        const closeButton = document.querySelector('.dialog__close-btn');
+        
+        openDialogButton.addEventListener('click', () => {
+            dialog.showModal();
+            document.querySelector('#name').focus();
+        });
+
+        closeButton.addEventListener('click', () => {
+            dialog.close();
+        });
+
+        dialog.querySelector('.dialog__form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            dialog.close();
+            console.log('Form submitted');
+        });
+    </script>
+</body>
+</html>
