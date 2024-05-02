@@ -554,7 +554,7 @@ h4 {
 /* 7.1 - HOME PAGE */
 /* 7.1.1 Header */
 .home__header {
-    background-image: url(/Photos/header.png);
+    background-image: url(/lokaal-47/Photos/header.png);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -684,7 +684,7 @@ h4 {
 .highlights {
     min-height: 100vh;
     background-color: var(--color-main);
-    background-image: url(/Photos/highlighs-vector.svg), url(/Photos/highlights-photo.png);
+    background-image: url(/lokaal-47/Photos/highlighs-vector.svg), url(/lokaal-47/Photos/highlights-photo.png);
     background-repeat: no-repeat, no-repeat;
     background-position: center center, center center;
     background-size: auto, cover;
